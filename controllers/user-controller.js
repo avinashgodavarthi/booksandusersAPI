@@ -5,6 +5,7 @@ var bcrypt = require("bcrypt")
 var jwt = require("jsonwebtoken")
 
 
+
 // register user controller//
 
 var registeruser = async(req,res)=>{
@@ -18,9 +19,11 @@ var registeruser = async(req,res)=>{
 
         var salt = await bcrypt.genSalt(5)
         var hashpassword = await bcrypt.hash(password,salt)
+        
 
 
-        // to creating the user or register controller//
+
+// to creating the user or register controller//
 
         var newuser = await user.create({
             username,
@@ -37,6 +40,7 @@ var registeruser = async(req,res)=>{
             
         }
     }
+
 
 // login controller//
 
@@ -67,8 +71,6 @@ var loginuser = async(req,res)=>{
         
     }
 }
-
-
 
 
 module.exports = {
