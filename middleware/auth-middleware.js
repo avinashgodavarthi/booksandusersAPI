@@ -4,6 +4,9 @@ var authmiddleware = (req,res,next)=>{
     var authHeaders = req.headers["authorization"]
     var token = authHeaders && authHeaders.split(" ")[1]
 
+    console.log(token); // for dispalying the token
+    
+
     if(!token){
         return res.status(401).json({message:"cannot access the token "})
     }
